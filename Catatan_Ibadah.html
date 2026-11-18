@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catatan Ibadah</title>
+  <link rel="stylesheet" href="Catatan_Ibadah.css" />
+</head>
+<body>
+  
+<header class="site-header">
+  <a class="brand" href="#beranda" aria-label="Catatan Ibadah - Beranda">
+    <span>Catatan Ibadah</span>
+  </a>
+</header>
+
+  <main id="beranda" class="page-shell">
+    <section class="hero-section" aria-labelledby="hero-title">
+      <div class="bio-text">
+        <h1 id="bio-text">Jaga konsistensi ibadah, di setiap harimu.</h1>
+        <p>Catat ibadah harianmu dengan sederhana dan lihat perkembangan kecil yang berarti.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#checklist">Buka Checklist Hari Ini</a>
+          <a class="button button-secondary" href="#jadwal">Lihat Jadwal</a>
+          <a class="button button-secondary" href="#notifikasi">Notifikasi</a>
+          <a class="button button-secondary" href="#streak">Lihat Streak</a>
+        </div>
+      </div>
+      <div class="hero-note" aria-label="Ringkasan hari ini">
+        <span class="note-label">Hari ini</span>
+        <strong id="progress-text">0 / 5 selesai</strong>
+        <span id="progress-caption" class="note-caption">
+      <div class="progress"><div id="progress-bar" class="progress-fill"></div></div>
+          Mulai dari satu ibadah.
+        </span>
+      </div>
+    </section>
+
+    <section class="dashboard-grid" aria-label="Ringkasan ibadah">
+      <article id="checklist" class="card checklist-card">
+        <div class="card-heading">
+          <div>
+            <h2>Checklist Ibadah</h2>
+          </div>
+        </div>
+
+        <div class="checklist" role="list">
+          <label class="check-row" role="listitem">
+            <input type="checkbox" />
+            <span>Salat Subuh</span>
+            <small>Belum</small>
+          </label>
+          <label class="check-row" role="listitem">
+            <input type="checkbox" />
+            <span>Salat Dzuhur</span>
+            <small>Belum</small>
+          </label>
+          <label class="check-row" role="listitem">
+            <input type="checkbox" />
+            <span>Salat Ashar</span>
+            <small>Belum</small>
+          </label>
+          <label class="check-row" role="listitem">
+            <input type="checkbox" />
+            <span>Salat Maghrib</span>
+            <small>Belum</small>
+          </label>
+          <label class="check-row" role="listitem">
+            <input type="checkbox" />
+            <span>Salat Isya</span>
+            <small>Belum</small>
+          </label>
+        </div>
+
+        <div id="ramadhan" class="ramadhan-panel">
+          <div class="ramadhan-heading">
+            <div>
+              <button type="button" id="toggle-ramadhan" class="button button-secondary">Tampilkan / Sembunyikan</button>
+              <h3>Mode Ramadhan</h3>
+            </div>
+          </div>
+          <div class="ramadhan-list">
+            <label class="check-row compact">
+              <input type="checkbox" />
+              <span>Puasa</span>
+              <small>Belum</small>
+            </label>
+            <label class="check-row compact">
+              <input type="checkbox" />
+              <span>Salat Tarawih</span>
+              <small>Belum</small>
+            </label>
+            <label class="check-row compact">
+              <input type="checkbox" />
+              <span>Sahur</span>
+              <small>Belum</small>
+            </label>
+            <label class="check-row compact">
+              <input type="checkbox" />
+              <span>Tadarus Al-Qur’an</span>
+              <small>Belum</small>
+            </label>
+            <label class="check-row compact">
+              <input type="checkbox" />
+              <span>Sedekah / Zakat Fitrah</span>
+              <small>Belum</small>
+            </label>
+          </div>
+        </div>
+      </article>
+
+      <aside id="jadwal" class="card schedule-card">
+        <div class="card-heading"><div><h2>Jadwal Harian</h2></div></div>
+        <p id="jadwal-status" class="note-caption">Memuat jadwal…</p>
+        <div class="schedule-list">
+          <div class="schedule-row"><span>Subuh</span><strong id="jadwal-subuh">--:--</strong></div>
+          <div class="schedule-row"><span>Dzuhur</span><strong id="jadwal-dzuhur">--:--</strong></div>
+          <div class="schedule-row"><span>Ashar</span><strong id="jadwal-ashar">--:--</strong></div>
+          <div class="schedule-row"><span>Maghrib</span><strong id="jadwal-maghrib">--:--</strong></div>
+          <div class="schedule-row"><span>Isya</span><strong id="jadwal-isya">--:--</strong></div>
+        </div>
+      </aside>
+    </section>
+  
+    <section id="notifikasi" class="notification-card">
+      <h2>Pengingat Ibadah</h2>
+      <p id="notification-status">
+        Notifikasi belum diaktifkan.
+      </p>
+      <button
+        type="button"
+        class="button"
+        onclick="aktifkanNotifikasi()"
+      >
+        Aktifkan Notifikasi
+      </button>
+    </section>
+
+    <section id="streak" class="streak-card">
+      <h2>Streak Ibadah</h2>
+      <p>
+        <span id="streak-count">0</span>
+        hari berturut-turut
+      </p>
+      <p id="streak-message">
+        Mulai konsisten beribadah hari ini!
+      </p>
+    </section>
+  </main>
+
+  
+<footer id="tentang" class="site-footer">
+  <p class="copyright">
+    &copy; 2026 Catatan Ibadah / Kelompok Beruang
+  </p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="Catatan_Ibadah.js"></script>
+</body>
+</html>
